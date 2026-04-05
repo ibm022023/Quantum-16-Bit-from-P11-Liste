@@ -37,8 +37,8 @@ G = Point(CURVE, Gx, Gy)
 FULL_RANGE_START = 0x4000
 FULL_RANGE_END = 0x7fff
 
-TARGET_PUBKEY = bytes.fromhex("02d70078efac36f98c25c98d9101af2aa3e85a1b52463e2b8e0835df5020177d1b") # PublicKey Correspond for 15-bit Decimal=16411 / HEX=0x401B
-TARGET_ADDRESS = "1PNjE86STnFZvoY7yvhQLU984gK6WELbg" # Corresponding to 15-bit Decimal=16411 / HEX=0x401B
+TARGET_PUBKEY = bytes.fromhex("03c1e36164e7fd4939be73c550154c01ffd96dfcfac7c805f15b5d9e4a364b409b") # PublicKey Correspond for 15-bit Decimal=16477 / HEX=0x405D
+TARGET_ADDRESS = "19hqK9vkcXRvnq6obsUaWSW6HywBHysot6" # Corresponding to 15-bit Decimal=16477 / HEX=0x405D
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 logger = logging.getLogger(__name__)
