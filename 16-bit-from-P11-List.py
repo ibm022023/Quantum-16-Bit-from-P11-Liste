@@ -97,7 +97,10 @@ def modinv(a, m):
     if g != 1:
         return None
     return x % m
-
+    
+def calculate_keyspace_start(bits: int) -> int:
+    return 1 << (bits - 1)
+    
 def compress_pubkey(privkey):
     sk = SigningKey.from_secret_exponent(privkey, curve=SECP256k1)
     vk = sk.verifying_key
