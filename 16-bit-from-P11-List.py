@@ -504,9 +504,11 @@ def main():
     print("⏳ Waiting for results from real quantum hardware...")
 
     result = job.result()
-    print("✅ Results retrieved from IBM Quantum!")
-    raw_dict = result[0].data.c.get_counts()
-    counts = Counter(raw_dict)
+    pub_result = result[0]
+    # The circuit has multiple classical registers, so we combine them
+    counts = pub_result.join_data().get_counts()
+
+    return dict(counts)
 
     # ZNE if enabled
     if use_zne:
