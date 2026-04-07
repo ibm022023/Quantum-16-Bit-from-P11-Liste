@@ -1,4 +1,4 @@
-For Donations & Reward : 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb / 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai 
+For Rewards & Donations : 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb / 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai 
 
 Basic Fast Config To Crack Small Bit keys:
 
