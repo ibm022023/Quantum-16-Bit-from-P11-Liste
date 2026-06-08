@@ -13,90 +13,89 @@ Here is All The Steps :
 1 ) ) - Start program With
 python3 Quantum-RegeV-1920.py
 
+Now You Choose [c] for Any Bit-Lengh You Want to Unlock,
 
-2 ) ) - For Costume Write --> c 
+2 ) ) - For Costum Write [c] -->  c 
 
-3 ) ) - Paste compressed public key
+3 ) ) - Paste Compressed public key
 
-03 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-02 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+03XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-4 ) ) -input Your Target bit length and  your The bit-lengh 
+02XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+------------------------------------------------------------
+4 ) )  ── > input Your Exact Bit-lengh's Target's bit length For example: 19 
 (or 16/ 17/ 18 /19/ 20 / ....135)
 
-5 ) ) - Just Press Enter for |auto]
+5 ) ) - for k_start (hex) [auto]: Just ── > [Press Entre] if you dont know The Keyspace
 
-k_start (hex) [auto]:  [Press Entre]
+This it is Just The Keyspace_Start of The Full Rang According to Your Bit-lengh That You Have Chosen
 
 ────────────────────────────────────────────────────────────
 
-6 ) ) - Number of Shots For Accurate Result  Write : 16384 
+6 ) ) - Number of Shots For Accurate Result  Write : 16384  <── Write it
 
 
 7 ) ) - Choose SOLVER [1] Regev + IPE Hybrid (default — recommended)
-1-(Regev + IPE)
+1-(Regev + IPE) <── Choose 1
 
 
 8 ) ) - NOW CHOOSE EXACTLY THIS :
 
 ────────────────────────────────────────────────────────────
 
-  Disable --> HalfGCD modular inversion? [Y/n]: n
+  Disable --> HalfGCD modular inversion? [Y/n]: n <── Choose
   
-  Disable --> Measurement-based uncomputation (MBU)? [Y/n]: n
+  Disable --> Measurement-based uncomputation (MBU)? [Y/n]: n <── Choose 
 
-  Enable --> Fibonacci basis-point prep (Ragavan-VV)? [Y/n]: Y
+  Enable --> Fibonacci basis-point prep (Ragavan-VV)? [Y/n]: Y <── Choose
 
-  ---> Noise-filter sigma (Ragavan-VV, 0=off) [2.0]: 2.0 
- ( Write 2.0 or Press Entre )
+---
+
+  ---> Noise-filter sigma (Ragavan-VV, 0=off) [2.0]: 2.0  
+  
+  ──> ( Write 2.0 or Press Entre )
 
 ────────────────────────────────────────────────────────────
 
-9 ) ) -  ADDER
+9 ) ) -  ADDER CHOOSE ( approx ) Write it & Press Enter
 
-────────────────────────────────────────────────────────────
+---
 
-Select [adder] choose ---> : approx
+Select [adder] choose ---> : approx <── Choose
 
 (write approx & Press Entre)
 
-  Approx threshold [4] Choose: 4
+  Approx threshold [4] Choose: 4 
 
 ────────────────────────────────────────────────────────────
 
 10 ) ) -  ERROR ENCODING  (Regev / Regev+IPE only)
 
-────────────────────────────────────────────────────────────
+---
 
-  [none]       No encoding
-  [repetition] [[3,1,1]] bit-flip code
-  [surface]    Surface-d3 patch (single round, decorative)
-  [cat]        Cat-qubit approximation
-  [dualrail]   Dual-rail erasure detection
+Select [cat] Choose [cat] Write it & Press Entre  ---> : cat
 
-Select [none] Choose cat Write it & Press Entre  ---> : cat
-
-  Enable --> Clifford+T optimization? [Y/n]: Y
+  Enable --> Clifford+T optimization? [Y/n]: Y <── Choose
   
-  Disable --> Enable flag qubits? [Y/n]: n
+  Disable --> Enable flag qubits? [Y/n]: n <── Choose
   
 ────────────────────────────────────────────────────────────
 
 11 ) ) -  SDK
 
-────────────────────────────────────────────────────────────
+---
 
   [qiskit]  Qiskit (default)
   
   [pytket]  pytket
   
-(JUSTWrite The One you want ) & press ENTER
 
 Select [qiskit/pytket]: pytket 
 
 Select [qiskit/pytket]: qiskit 
 
-(JUSTWrite The One you want ) & press ENTER
+(  Just Write The One you want  ) & press ENTER
 
 ──────────────────────────────────────────────────────────___──-------------
 
@@ -105,23 +104,37 @@ Select [qiskit/pytket]: qiskit
 ──────────────────────────────────────────────────────────____──-----------
 
    Choose backend ---> 
- ! LISTEN HERE !
+   
 
-  - if you choosed qiskit --> Next Write[ ibm ] in The Next Backends inputs.
-  - if you choosed pytket --> Next Write[ iqm ] in The Next Backends inputs.
+  [aer]     Aer simulator   (  You Can Use it But No Need To Use The Aer Simulator  ) 
+  aer it has only 18 qubits
+  
+ So instead 
+  Choose Real Hardware  Write ( ibm / iqm )  & Press Enter
 
-  [aer]     Aer simulator
   [ibm]     IBM Quantum
-  [iqm]     IQM Resonance (pytket-iqm: sirius/garnet/emerald)
+  
+  [iqm]     IQM Resonance
+  
+------------------------------------------------------------
+   ! HERE LISTEN !
 
-Choose --->    Select [aer]: ibm    /   Select [aer]: iqm
+  - if you Choosed qiskit --> Next You Choose[ ibm ] in The Next Backends inputs.
+  - if you Choosed pytket --> Next You Choose[ iqm ] in The Next Backends inputs.
 
 
-13 ) ) -  Number of runs (Regev needs d+4 independent samples) Choose [1]: 1
+Select [backend]: ibm  <── Write it   
 
-PASTE YOUR ( IBM /IQM ) API TOKENS:
+/ or   Select [backend]: iqm <── Write it
 
 ────────────────────────────────────────────────────────────
+
+13 ) ) -  Number of runs (Regev needs d+4 independent samples) Choose [1]: 1  <──  (  Keep it 1  )
+
+
+─>  PASTE YOUR ( IBM /IQM ) API TOKENs :
+
+------------------------------------------------------------
 
 FOR-IQM
 

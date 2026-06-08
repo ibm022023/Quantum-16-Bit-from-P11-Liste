@@ -143,20 +143,18 @@ N_ORDER = ORDER
 SMALL_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
 
 PRESETS = {
-    "5":   {"bits":5,   "start":0x10,
-            "pub":"02352bbf4a4cdd12564f93fa332ce333301d9ad40271f8107181340aef25be59d5","shots":512},
-    "8":   {"bits":8,   "start":0x80,
-            "pub":"0308bc89c2f919ed158885c35600844d49890905c79b357322609c45706ce6b514","shots":1024},
     "14":  {"bits":14,  "start":0x2000,
             "pub":"03b4f1de58b8b41afe9fd4e5ffbdafaeab86c5db4769c15d6e6011ae7351e54759","shots":1280},
     "16":  {"bits":16,  "start":0x8000,
-            "pub":"029d8c5d35231d75eb87fd2c5f05f65281ed9573dc41853288c62ee94eb2590b7a","shots":16384},
-    "21":  {"bits":21,  "start":0x100000,
-            "pub":"031a746c78f72754e0be046186df8a20cdce5c79b2eda76013c647af08d306e49e","shots":32768},
-    "25":  {"bits":25,  "start":0x1000000,
-            "pub":"03057fbea3a2623382628dde556b2a0698e32428d3cd225f3bd034dca82dd7455a","shots":65536},
+            "pub":"029d8c5d35231d75eb87fd2c5f05f65281ed9573dc41853288c62ee94eb2590b7a","shots":2048},
+    "17":  {"bits":17,  "start":0x10000,
+            "pub":"033f688bae8321b8e02b7e6c0a55c2515fb25ab97d85fda842449f7bfa04e128c3","shots":8192},
+    "19":  {"bits":19,  "start":0x40000,
+            "pub":"0385663c8b2f90659e1ccab201694f4f8ec24b3749cfe5030c7c3646a709408e19","shots":16384},
+    "20":  {"bits":20,  "start":0x80000,
+            "pub":"033c4a45cbd643ff97d77f41ea37e843648d50fd894b864b0d52febc62f6454f7c","shots":16384},
     "135": {"bits":135, "start":0x400000000000000000000000000000000,
-            "pub":"02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16","shots":100000},
+            "pub":"02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16","shots":65536},
 }
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -245,7 +243,7 @@ class P11Config:
     # ── SDK / backend ────────────────────────────────────────────────────────
     sdk: str = "qiskit"
     backend: str = "aer"
-    shots: int = 32768
+    shots: int = 16384
     n_runs: int = 1                   # multi-run sample accumulation for Regev
     ibm_token: str = ""
     ibm_crn: str = ""
@@ -3877,7 +3875,7 @@ def interactive_menu() -> P11Config:
         cfg.bits    = int(input("Bit length [16]: ").strip() or "16")
         ks          = input("k_start (hex) [auto]: ").strip()
         cfg.k_start = int(ks, 16) if ks else (1 << (cfg.bits - 1))
-        cfg.shots   = int(input("Shots [32768]: ").strip() or "32768")
+        cfg.shots   = int(input("Shots [16384]: ").strip() or "16384")
 
     # ── ★ Algorithm / Solver mode ─────────────────────────────────────────────
     print("\n" + "─" * 60)
@@ -3934,7 +3932,7 @@ def interactive_menu() -> P11Config:
     print("  [draper]  Standard QFT-based (default)")
     print("  [approx]  Approximate Draper (fewer rotations, lower depth)")
     print("  [ripple]  Cuccaro ripple-carry (low T-depth, more ancillas)")
-    cfg.adder = input("Select [draper]: ").strip() or "draper"
+    cfg.adder = input("Select [approx]: ").strip() or "approx"
     if cfg.adder == "approx":
         cfg.approx_threshold = int(input("  Approx threshold [4]: ").strip() or "4")
 
@@ -3984,7 +3982,7 @@ def interactive_menu() -> P11Config:
     if IQM_OK:    print("  [iqm]     IQM Resonance (pytket-iqm: sirius/garnet/emerald)")
     if GUPPY_OK:  print("  [selene]  Quantinuum Selene (stabilizer)")
     if NEXUS_OK:  print("  [helios]  Quantinuum HELIOS (Q-Nexus)")
-    cfg.backend = input("Select [aer]: ").strip() or "aer"
+    cfg.backend = input("Select [backend]: ").strip() or "aer"
 
     # Runs: Shor needs only 1; Regev needs d+4
     if cfg.solver_mode == "shor":
