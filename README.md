@@ -178,4 +178,4 @@ For Donations & Rewards : 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb / 1NEJcwfcEm7Aax8oJ
 
 License
 ==========
-This project used to be a Submission for the Q-Day Prize Challenge release under [MIT LICENSE](LICENSE)
+This project used to be a Submission for the Q-Day Prize Challenge release under [MIT LICENSE](LICENSE.txt)
