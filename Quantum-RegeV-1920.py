@@ -3906,11 +3906,11 @@ def interactive_menu() -> P11Config:
         print("  (All options active in Google-Shor mode; toggles below override)")
     print("─" * 60)
 
-    ans = input("  HalfGCD modular inversion? [Y/n]: ").strip().lower()
-    cfg.use_halfgcd_inv = ans != "n"
+    ans = input("  HalfGCD modular inversion? [y/N]: ").strip().lower()
+    cfg.use_halfgcd_inv = ans == "y"
 
-    ans = input("  Measurement-based uncomputation (MBU)? [Y/n]: ").strip().lower()
-    cfg.use_mbu = ans != "n"
+    ans = input("  Measurement-based uncomputation (MBU)? [y/N]: ").strip().lower()
+    cfg.use_mbu = ans == "y"
 
     ans = input("  Fibonacci basis-point prep (Ragavan-VV)? [Y/n]: ").strip().lower()
     cfg.use_fibonacci_prep = ans != "n"
@@ -3946,10 +3946,10 @@ def interactive_menu() -> P11Config:
         print("  [surface]    Surface-d3 patch (single round, decorative)")
         print("  [cat]        Cat-qubit approximation")
         print("  [dualrail]   Dual-rail erasure detection")
-        cfg.encoding = input("Select [none]: ").strip() or "none"
+        cfg.encoding = input("Select [cat]: ").strip() or "cat"
 
         cfg.cliffordT_optimize = input("\n  Clifford+T optimization? [Y/n]: ").strip().lower() != "n"
-        cfg.use_flags = input("  Enable flag qubits? [Y/n]: ").strip().lower() != "n"
+        cfg.use_flags = input("  Enable flag qubits? [y/N]: ").strip().lower() == "y"
         if cfg.encoding == "dualrail":
             cfg.use_dualrail_erasure = (
                 input("  Dual-rail erasure post-selection? [Y/n]: ").strip().lower() != "n"
@@ -3999,7 +3999,7 @@ def interactive_menu() -> P11Config:
         cfg.ibm_crn   = os.getenv("IBM_QUANTUM_CRN")   or input("IBM CRN [optional]: ").strip()
     elif cfg.backend == "iqm":
         cfg.iqm_token  = os.getenv("IQM_TOKEN") or input("IQM token: ").strip()
-        cfg.iqm_device = input("IQM device [garnet / sirius / emerald]: ").strip() or "garnet"
+        cfg.iqm_device = input("IQM device [garnet / sirius / emerald]: ").strip() or "emerald"
     elif cfg.backend == "helios":
         cfg.nexus_project = input("Q-Nexus project name [p11-regev]: ").strip() or "p11-regev"
 
