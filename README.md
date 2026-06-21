@@ -1,7 +1,7 @@
 
 This is Best Fast Config To Crack Small Bit keys:
 ================================
-
+𓏙𓏙𓏙𓏙𓋍𓄿𓋜𓐭𓃀𓂏𓉢𓆠𓆆𓂾𓐮𓋝𓅕𓊾𓊗𓅱𓂻𓃀𓅔𓐮𓋛𓏙𓏙𓏙𓏙 arxiv.org/abs/2606.17647
 - Quantum Websites For Sign In Up :
 
 [https://resonance.iqm.tech/](https://resonance.iqm.tech/sign-up)
@@ -13,7 +13,7 @@ REGEV + IPE (RECOMMENDED CONFIGs)
 ================================
 Don't Use Google Colab There is Risk you will Get Suspended ! 
 Use Q-braid Platform & Run All Cells & Than Switch To Terminal
-Go Sign Up https://qbraid.com/ Upload The Full_Notebook_Requirements.ipynb
+Go Sign Up [https://qbraid.com/](https://account.qbraid.com/dashboard) Upload The Full_Notebook_Requirements.ipynb
 Than Run All The Cells & Don't Worry About Red Warnings The Notebook will take Some Time When it Finish , Start A Terminal 
 Here is All The Steps :
 
@@ -168,7 +168,7 @@ OR You Can Choose Write Your [Backends Name] & Press ENTRE.
 
 ────────────────────────────────────────────────────────────
 
-Hi i-Realy Apperciated you get me Any Donation
+Hi i-Realy Apperciated you get me A Donations :  𓏥𓏥𓏥𓍯𓊃𓎡𓏤𓆣𓁹𓁹𓅔♕𓅇𓃵𓆉𓆌𓆓𓏏𓏥𓏥𓏥𓏥 𓊃𓏥 𓏏𓏥 𓎡𓏥 𓏙𓏥 𓍯
 
 DM me Here Please -> 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai / 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb
 
@@ -177,8 +177,12 @@ DM me Here Please -> 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai / 1Bu4CR8Bi5AXQG8pnu1avn
 <img width="687" height="431" alt="Basic Fast Configs" src="https://raw.githubusercontent.com/threealgos/Quantum-RegeV-Cracker/refs/heads/main/The_Configs_The_Configurations.png" />
 <img width="687" height="431" alt="Basic Fast Configs" src="https://raw.githubusercontent.com/threealgos/Quantum-RegeV-Cracker/refs/heads/main/infos.png" />
 
-For Donations & Rewards : 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb / 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai .
+BTC Puzzles : [https://privatekeys.pw/puzzles/bitcoin-puzzle-tx/](https://privatekeys.pw/puzzles/bitcoin-puzzle-tx?table=0&status=all)  / https://btcpuzzle.info/puzzle
+
+For Donations & Rewards : 1Bu4CR8Bi5AXQG8pnu1avny88C5CCgWKfb / 1NEJcwfcEm7Aax8oJNjRUnY3hEavCjNrai . 
 
 License
 ==========
-This project used to be a Submission for the Q-Day Prize Challenge release under [MIT LICENSE](LICENSE.txt)
+The Project was a Submission for IQM Researchs Awards Launched by IQM Quantum Computers in Spring of 2026
+
+Release under [MIT LICENSE](LICENSE.txt)

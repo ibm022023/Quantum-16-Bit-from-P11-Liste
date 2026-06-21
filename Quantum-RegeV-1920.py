@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  P11-REGEV-ULTIMATE  v3.0  ·  GOOGLE QUANTUM / SCHROTTENLOHER EDITION        ║
+║  REGEV-Quantum-Algorithm v3.0  ·  GOOGLE QUANTUM / SCHROTTENLOHER EDITION    ║
 ║  Hybrid Quantum Regev Multi-Dim + IPE + Shor (Google/Schrottenloher style)   ║
 ╠══════════════════════════════════════════════════════════════════════════════╣
 ║  NEW IN v3 (from Google Quantum AI Mar-2026 + Schrottenloher Jun-2026):       ║
@@ -144,15 +144,15 @@ SMALL_PRIMES = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
 
 PRESETS = {
     "14":  {"bits":14,  "start":0x2000,
-            "pub":"03b4f1de58b8b41afe9fd4e5ffbdafaeab86c5db4769c15d6e6011ae7351e54759","shots":1280},
+            "pub":"03b4f1de58b8b41afe9fd4e5ffbdafaeab86c5db4769c15d6e6011ae7351e54759","shots":2048},
     "16":  {"bits":16,  "start":0x8000,
-            "pub":"029d8c5d35231d75eb87fd2c5f05f65281ed9573dc41853288c62ee94eb2590b7a","shots":2048},
+            "pub":"029d8c5d35231d75eb87fd2c5f05f65281ed9573dc41853288c62ee94eb2590b7a","shots":4096},
     "17":  {"bits":17,  "start":0x10000,
             "pub":"033f688bae8321b8e02b7e6c0a55c2515fb25ab97d85fda842449f7bfa04e128c3","shots":8192},
     "19":  {"bits":19,  "start":0x40000,
             "pub":"0385663c8b2f90659e1ccab201694f4f8ec24b3749cfe5030c7c3646a709408e19","shots":16384},
     "20":  {"bits":20,  "start":0x80000,
-            "pub":"033c4a45cbd643ff97d77f41ea37e843648d50fd894b864b0d52febc62f6454f7c","shots":16384},
+            "pub":"033c4a45cbd643ff97d77f41ea37e843648d50fd894b864b0d52febc62f6454f7c","shots":32768},
     "135": {"bits":135, "start":0x400000000000000000000000000000000,
             "pub":"02145d2611c823a396ef6712ce0f712f09b9b4f3135e3e0aa3230fb9b6d08d1e16","shots":65536},
 }
@@ -2994,7 +2994,14 @@ def solve_regev_ecdlp(cfg: P11Config) -> Optional[int]:
     elif cfg.sdk == "pytket":
         qc_tket, d_used = build_regev_pytket(cfg, delta_powers, basis_powers)
         from pytket.extensions.qiskit import tk_to_qiskit
-        qc = tk_to_qiskit(qc_tket)
+        # replace_implicit_swaps=True: pytket optimization passes (FullPeepholeOptimise,
+        # RemoveRedundancies) leave implicit wire-swap permutations in the circuit's
+        # qubit-permutation table rather than inserting explicit SWAP gates.
+        # tk_to_qiskit() now warns (and silently ignores) these by default since
+        # pytket-qiskit ~0.36+. Setting replace_implicit_swaps=True materialises
+        # the permutation as explicit SWAPs at the end of the circuit so the
+        # qubit ordering is physically correct on IQM/IBM hardware submission.
+        qc = tk_to_qiskit(qc_tket, replace_implicit_swaps=True)
 
     elif cfg.sdk == "qrisp":
         z_vars, target, d_used = build_regev_qrisp(cfg, delta_powers, basis_powers)
